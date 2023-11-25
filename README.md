@@ -1,3 +1,3 @@
 # ProductiveBox-Development
 
-Private repository.
+Temporary development directory.
