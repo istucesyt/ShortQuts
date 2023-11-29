@@ -1,6 +1,6 @@
 # 🐞 ProductiveBox-Development
 
-Development repository.
+Development repository. 
 
 ## 🧭 Changelog
 
