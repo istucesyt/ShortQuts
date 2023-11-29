@@ -1,6 +1,6 @@
 # 🐞 ProductiveBox-Development
 
-Temporary development directory.
+Development repository.
 
 ## 🧭 Changelog
 
