@@ -4,6 +4,10 @@ Development repository.
 
 ## 🧭 Changelog
 
+### 03/12/23 :
+* completed "About the insects" section
+* added all the insects cards
+
 ### 26/11/23 :
 * completed "About" section
 * added simple UI (incomplete)
