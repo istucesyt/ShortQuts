@@ -14,3 +14,8 @@ Development repository.
 * added two help windows (second one isn't finished)
 * added minimum sdk (11.0)
 * added app category
+
+### 26/11/23 :
+* completed "Settings" section
+* toogles in "Settings" interact with variables `altIcons` and `autoLaunch` but no action is yet linked to these variables
+
