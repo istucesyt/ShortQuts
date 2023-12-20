@@ -4,10 +4,6 @@ Development repository.
 
 ## 🧭 Changelog
 
-### 03/12/23 :
-* completed "About the insects" section
-* added all the insects cards
-
 ### 26/11/23 :
 * completed "About" section
 * added simple UI (incomplete)
@@ -15,7 +11,13 @@ Development repository.
 * added minimum sdk (11.0)
 * added app category
 
-### 26/11/23 :
+### 03/12/23 :
+* completed "About the insects" section
+* added all the insects cards
+
+### 15/12/23 :
 * completed "Settings" section
 * toogles in "Settings" interact with variables `altIcons` and `autoLaunch` but no action is yet linked to these variables
 
+### 20/12/23 :
+* added new icon
