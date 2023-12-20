@@ -15,7 +15,7 @@ Development repository.
 * completed "About the insects" section
 * added all the insects cards
 
-### 15/12/23 :
+### 16/12/23 :
 * completed "Settings" section
 * toogles in "Settings" interact with variables `altIcons` and `autoLaunch` but no action is yet linked to these variables
 
