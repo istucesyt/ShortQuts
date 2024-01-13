@@ -33,3 +33,10 @@ https://istuces.framer.website/productivebox
 * added "AccentColor" asset
 * added "Socials" section
 * added "thanks to" section in "About" menu
+
+### 13/01/24 :
+* added definitive icon
+* completed "Settings and infos" menu :
+  - [WEB] link to website
+  - [WEB] link to GitHub
+* added new UI
