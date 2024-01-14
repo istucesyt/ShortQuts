@@ -27,7 +27,7 @@ https://istuces.framer.website/productivebox
 
 ### 02/01/24 :
 * happy new year 🐞
-* completed "Settings and infos" menu :
+* completed "Settings and infos" menu:
    - [SYSTEM] launch at startup
    - [UI] enable/disable alternative symbols
    - [WEB] join the Discord server
@@ -38,7 +38,8 @@ https://istuces.framer.website/productivebox
 
 ### 13/01/24 :
 * added definitive icon
-* completed "Settings and infos" menu :
+* completed "Settings and infos" menu:
   - [WEB] link to website
   - [WEB] link to GitHub
 * added new UI
+* modified minimum sdk (13.0)
