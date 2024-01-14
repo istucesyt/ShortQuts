@@ -43,3 +43,9 @@ https://istuces.framer.website/productivebox
   - [WEB] link to GitHub
 * added new UI
 * modified minimum sdk (13.0)
+
+### 14/01/24 :
+* completed UI:
+  - toolbar: buttons present but not linked to actions
+  - menu
+  - "About" menu
