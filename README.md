@@ -28,7 +28,6 @@ https://istuces.framer.website/productivebox
 ### 02/01/24 :
 * happy new year 🐞
 * completed "Settings and infos" menu:
-   - [SYSTEM] launch at startup
    - [UI] enable/disable alternative symbols
    - [WEB] join the Discord server
    - [WEB] subscribe to the YouTube channel
@@ -49,3 +48,10 @@ https://istuces.framer.website/productivebox
   - toolbar: buttons present but not linked to actions
   - menu
   - "About" menu
+ 
+### 24/01/24:
+* added a "rotate" button to the toolbar (linked to no action)
+* update of the toolbar according to the modifications: https://github.com/istucesyt/ProductiveBox-Development/issues/2#issuecomment-1896121942
+* menu updated with the same changes
+* updated symbol pages with the same changes
+* added “launch at login” functionality (resource: https://github.com/sindresorhus/LaunchAtLogin-Modern)
