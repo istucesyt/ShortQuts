@@ -50,7 +50,6 @@ https://istuces.framer.website/productivebox
   - "About" menu
  
 ### 24/01/24:
-* added a "rotate" button to the toolbar (linked to no action)
 * update of the toolbar according to the modifications: https://github.com/istucesyt/ProductiveBox-Development/issues/2#issuecomment-1896121942
 * menu updated with the same changes
 * updated symbol pages with the same changes
