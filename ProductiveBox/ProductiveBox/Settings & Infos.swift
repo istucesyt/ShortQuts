@@ -9,6 +9,9 @@ import SwiftUI
 import LaunchAtLogin
 
 struct Settings: View {
+    @AppStorage("setup") var setup: Bool = true
+    @AppStorage("altIcons") var altIcons: Bool = true
+    
     var body: some View {
         HStack {
             Text("  Commande + W pour fermer.")
@@ -18,8 +21,112 @@ struct Settings: View {
         }
         .frame(maxWidth: .infinity, maxHeight: 0, alignment: .leading)
         
-        VStack {
+        ScrollView {
             Spacer()
+            
+            Text("Configuration de ProductiveBox :")
+                .font(.system(size: 12, weight: .medium))
+                .foregroundColor(.primary)
+            Button(action: {
+                setupMode()
+            }) {
+                HStack {
+                    Image(systemName: "seal")
+                    Text("Rétablir la configuration  ")
+                        .font(.system(size: 12, weight: .regular))
+                }
+                .padding(5)
+            }
+            .buttonStyle(.borderedProminent).tint(.red)
+            .cornerRadius(50)
+            Text("L'application va quitter. Veuillez la relancer pour continuer la configuration.")
+                .font(.system(size: 10, weight: .regular))
+                .foregroundColor(.primary)
+            
+            Spacer(minLength: 20)
+            Divider()
+            Spacer(minLength: 20)
+            
+            Text("Style :")
+                .font(.system(size: 12, weight: .medium))
+                .foregroundColor(.primary)
+            HStack {
+                Spacer(minLength: 20)
+                
+                if altIcons {
+                    Button(action: {
+                        enableAltIcons()
+                    }) {
+                        Image("StyleOption1")
+                            .resizable()
+                            .scaledToFill()
+                            .cornerRadius(30)
+                            .padding(.vertical, 6)
+                    }
+                    .cornerRadius(37)
+                    .buttonStyle(.borderedProminent).tint(.primary)
+                } else {
+                    Button(action: {
+                        enableAltIcons()
+                    }) {
+                        Image("StyleOption1")
+                            .resizable()
+                            .scaledToFill()
+                            .cornerRadius(30)
+                            .padding(.vertical, 6)
+                    }
+                    .cornerRadius(37)
+                }
+                
+                Spacer(minLength: 15)
+                
+                if altIcons == false {
+                    Button(action: {
+                        disableAltIcons()
+                    }) {
+                        Image("StyleOption2")
+                            .resizable()
+                            .scaledToFill()
+                            .cornerRadius(30)
+                            .padding(.vertical, 6)
+                    }
+                    .cornerRadius(37)
+                    .buttonStyle(.borderedProminent).tint(.primary)
+                } else {
+                    Button(action: {
+                        disableAltIcons()
+                    }) {
+                        Image("StyleOption2")
+                            .resizable()
+                            .scaledToFill()
+                            .cornerRadius(30)
+                            .padding(.vertical, 6)
+                    }
+                    .cornerRadius(37)
+                }
+                
+                Spacer(minLength: 20)
+            }
+            
+            Spacer(minLength: 15)
+            
+            if altIcons {
+                Text("Style sélectionné : ")
+                    .font(.system(size: 10, weight: .regular))
+                +
+                Text("classique")
+                    .font(.system(size: 10, weight: .bold))
+            } else {
+                Text("Style sélectionné : ")
+                    .font(.system(size: 10, weight: .regular))
+                +
+                Text("Emojis")
+                    .font(.system(size: 10, weight: .bold))
+            }
+            
+            Spacer(minLength: 20)
+            Divider()
+            Spacer(minLength: 20)
             
             HStack {
                 Text("Lancement au démarrage :")
@@ -30,6 +137,8 @@ struct Settings: View {
                     .accentColor(.red)
             }
             
+            Spacer(minLength: 20)
+            Divider()
             Spacer(minLength: 20)
             
             Text("Mise à jour :")
@@ -48,10 +157,15 @@ struct Settings: View {
                 .font(.system(size: 10, weight: .regular))
                 .foregroundColor(.primary)
             +
-            Text(" n0 [development]")
-                .font(.system(size: 10, weight: .medium))
+            Text(" \(getAppVersion())")
+                .font(.system(size: 10, weight: .bold))
+                .foregroundColor(.primary)
+            Text("Rejoignez le serveur Discord pour ne manquer aucune MàJ. 👇")
+                .font(.system(size: 10, weight: .regular))
                 .foregroundColor(.primary)
             
+            Spacer(minLength: 20)
+            Divider()
             Spacer(minLength: 20)
             
             Text("Discord :")
@@ -93,7 +207,7 @@ struct Settings: View {
                 website()
             }) {
                 Image(systemName: "globe")
-                Text("istuces.framer.website/productivebox")
+                Text("GitHub")
                     .font(.system(size: 12, weight: .regular))
                     .foregroundColor(.primary)
             }
@@ -103,7 +217,7 @@ struct Settings: View {
                 github()
             }) {
                 Image(systemName: "globe")
-                Text("github.com/istucesyt/ProductiveBox-Development")
+                Text("Site Web")
                     .font(.system(size: 12, weight: .regular))
                     .foregroundColor(.primary)
             }
@@ -127,11 +241,23 @@ struct Settings: View {
             .cornerRadius(50)
             .buttonStyle(.borderedProminent).tint(.red)
             
-            Spacer()
+            Spacer(minLength: 50)
         }
         .frame(minWidth: 400, maxWidth: 400, minHeight: 380, maxHeight: 380)
         .padding(20)
         .fixedSize()
+        .padding(.bottom, -28)
+        
+        Rectangle()
+            .frame(height: 5)
+                            .foregroundColor(.accentColor)
+                            .shadow(color: .accentColor.opacity(1), radius: 10, x: 0, y: 0)
+                            .opacity(1)
+    }
+    
+    func setupMode() {
+        setup = true
+        NSApplication.shared.terminate(nil)
     }
     
     func discord() {
@@ -157,4 +283,23 @@ struct Settings: View {
             NSWorkspace.shared.open(url)
         }
     }
+    
+    func enableAltIcons() {
+        altIcons = true
+    }
+    
+    func disableAltIcons() {
+        altIcons = false
+    }
+    
+    func getAppVersion() -> String {
+            if let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+                return appVersion
+            }
+            return "Unknown"
+    }
+}
+
+#Preview {
+    Settings()
 }

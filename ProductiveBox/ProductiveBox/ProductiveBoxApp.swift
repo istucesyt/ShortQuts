@@ -10,25 +10,66 @@ import LaunchAtLogin
 
 @main
 struct ProductiveBoxApp: App {
+    @AppStorage("setup") var setup: Bool = true
+    @State private var previewApp: Bool = false // --> activer pour prévisualiser et tester du contenu
+    
     var body: some Scene {
         WindowGroup {
-            Toolbar()
-                .background(TitleBarHiddenWindow())
-                .onAppear {
-                    let _ = NSApplication.shared.windows.map { $0.tabbingMode = .disallowed }
-                }
+            if previewApp {
+                // contenu à prévisualiser :
+                Menu()
+                    .environment(\.locale, .init(identifier: "en")) // --> localisation
+                    .background(SetupWindowTitleBar())
+                    .onAppear {
+                        let _ = NSApplication.shared.windows.map { $0.tabbingMode = .disallowed }
+                    }
+            } else if setup {
+                Setup()
+                    .background(SetupWindowTitleBar())
+                    .onAppear {
+                        let _ = NSApplication.shared.windows.map { $0.tabbingMode = .disallowed }
+                    }
+            } else {
+                Toolbar()
+                    .background(WindowTitleBar())
+                    .onAppear {
+                        let _ = NSApplication.shared.windows.map { $0.tabbingMode = .disallowed }
+                    }
+            }
         }
         .windowStyle(HiddenTitleBarWindowStyle())
         .windowResizability(.contentSize)
     }
 }
 
-struct TitleBarHiddenWindow: NSViewRepresentable {
+struct WindowTitleBar: NSViewRepresentable {
     func makeNSView(context: Context) -> NSView {
         let view = NSView()
         DispatchQueue.main.async {
             if let window = view.window {
                 window.titleVisibility = .hidden
+                window.titlebarAppearsTransparent = true
+                window.standardWindowButton(.closeButton)?.isHidden = true
+                window.standardWindowButton(.zoomButton)?.isHidden = true
+                window.standardWindowButton(.miniaturizeButton)?.isHidden = true
+                window.level = .mainMenu
+                window.collectionBehavior = [.fullScreenPrimary]
+                window.makeKeyAndOrderFront(nil)
+            }
+        }
+        return view
+    }
+    
+    func updateNSView(_ nsView: NSView, context: Context) {}
+}
+
+struct SetupWindowTitleBar: NSViewRepresentable {
+    func makeNSView(context: Context) -> NSView {
+        let view = NSView()
+        DispatchQueue.main.async {
+            if let window = view.window {
+                window.titleVisibility = .visible
+                window.title = "Assistant de configuration"
                 window.titlebarAppearsTransparent = true
                 window.standardWindowButton(.closeButton)?.isHidden = true
                 window.standardWindowButton(.zoomButton)?.isHidden = true

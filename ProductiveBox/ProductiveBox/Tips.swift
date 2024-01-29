@@ -65,6 +65,10 @@ struct Tip🐞: View {
         .padding(20)
         .padding(20)
         .frame(minWidth: 350, idealWidth: 350, minHeight: 400, idealHeight: 400)
+        
+        Rectangle()
+            .frame(height: 5)
+                            .foregroundColor(.accentColor)
     }
 }
 
@@ -126,6 +130,10 @@ struct Tip🦋: View {
         .padding(20)
         .padding(20)
         .frame(minWidth: 350, idealWidth: 350, minHeight: 400, idealHeight: 400)
+        
+        Rectangle()
+            .frame(height: 5)
+                            .foregroundColor(.accentColor)
     }
 }
 
@@ -187,6 +195,10 @@ struct Tip🐛: View {
         .padding(20)
         .padding(20)
         .frame(minWidth: 350, idealWidth: 350, minHeight: 400, idealHeight: 400)
+        
+        Rectangle()
+            .frame(height: 5)
+                            .foregroundColor(.accentColor)
     }
 }
 
@@ -251,6 +263,10 @@ struct Tip🪲: View {
         .padding(20)
         .padding(20)
         .frame(minWidth: 350, idealWidth: 350, minHeight: 400, idealHeight: 400)
+        
+        Rectangle()
+            .frame(height: 5)
+                            .foregroundColor(.accentColor)
     }
 }
 
@@ -272,7 +288,7 @@ struct Tip🐜: View {
                 Text("Aide :")
                     .font(.largeTitle)
             if altIcons {
-                Image(systemName: "face.smiling")
+                Image(systemName: "bolt")
                     .font(.title)
             } else {
                 Text("Symbole fourmi 🐜\n\n")
@@ -312,6 +328,10 @@ struct Tip🐜: View {
         .padding(20)
         .padding(20)
         .frame(minWidth: 350, idealWidth: 350, minHeight: 450, idealHeight: 450)
+        
+        Rectangle()
+            .frame(height: 5)
+                            .foregroundColor(.accentColor)
     }
 }
 
@@ -333,7 +353,7 @@ struct Tip🐳: View {
                 Text("Aide :")
                     .font(.largeTitle)
             if altIcons {
-                Image(systemName: "bolt")
+                Image(systemName: "memorychip")
                     .font(.title)
             } else {
                 Text("Symbole baleine 🐳\n\n")
@@ -373,6 +393,10 @@ struct Tip🐳: View {
         .padding(20)
         .padding(20)
         .frame(minWidth: 350, idealWidth: 350, minHeight: 400, idealHeight: 400)
+        
+        Rectangle()
+            .frame(height: 5)
+                            .foregroundColor(.accentColor)
     }
 }
 
@@ -434,5 +458,9 @@ struct Tip🦊: View {
         .padding(20)
         .padding(20)
         .frame(minWidth: 350, idealWidth: 350, minHeight: 400, idealHeight: 400)
+        
+        Rectangle()
+            .frame(height: 5)
+                            .foregroundColor(.accentColor)
     }
 }

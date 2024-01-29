@@ -10,6 +10,8 @@ import SwiftUI
 struct Menu: View {
     @AppStorage("altIcons") var altIcons: Bool = false
     @State private var bundleID = ""
+    @State private var altIconsButtonsMinWidth: CGFloat = 56
+    @State private var altIconsButtonsMinHeight: CGFloat = 42
     
     var body: some View {
         HStack {
@@ -109,89 +111,100 @@ struct Menu: View {
                     }
                     .padding(15)
                 } else {
-                    HStack  {
-                        Button(action: {
-                            Tip🐞().openInWindow(title: "", sender: self)
-                        }) {
+                    HStack {
+                        VStack {
                             Image(systemName: "note.text.badge.plus")
                                 .font(.title)
                                 .padding(5)
+                                .foregroundColor(.white)
                         }
+                        .frame(minWidth: altIconsButtonsMinWidth, minHeight: altIconsButtonsMinHeight)
+                        .background(Color("ToolbarButtonsColor"))
                         .cornerRadius(15)
-                        .buttonStyle(.borderedProminent).tint(.red)
+                        .onTapGesture {
+                            Tip🐞().openInWindow(title: "", sender: self)
+                        }
                         
-                        Button(action: {
-                            Tip🦋().openInWindow(title: "", sender: self)
-                        }) {
+                        VStack {
                             Image(systemName: "rectangle.split.2x1")
                                 .font(.title)
                                 .padding(5)
+                                .foregroundColor(.white)
                         }
+                        .frame(minWidth: altIconsButtonsMinWidth, minHeight: altIconsButtonsMinHeight)
+                        .background(Color("ToolbarButtonsColor"))
                         .cornerRadius(15)
-                        .buttonStyle(.borderedProminent).tint(.red)
-                        
-                        Button(action: {
-                            Tip🐛().openInWindow(title: "", sender: self)
-                        }) {
+                        .onTapGesture {
+                            Tip🦋().openInWindow(title: "", sender: self)
+                        }
+                    
+                        VStack {
                             Image(systemName: "camera.badge.ellipsis")
                                 .font(.title)
                                 .padding(5)
+                                .foregroundColor(.white)
                         }
+                        .frame(minWidth: altIconsButtonsMinWidth, minHeight: altIconsButtonsMinHeight)
+                        .background(Color("ToolbarButtonsColor"))
                         .cornerRadius(15)
-                        .buttonStyle(.borderedProminent).tint(.red)
+                        .onTapGesture {
+                            Tip🐛().openInWindow(title: "", sender: self)
+                        }
                         
-                        Button(action: {
-                            Tip🪲().openInWindow(title: "", sender: self)
-                        }) {
+                        VStack {
                             Image(systemName: "togglepower")
                                 .font(.title)
                                 .padding(5)
+                                .foregroundColor(.white)
                         }
+                        .frame(minWidth: altIconsButtonsMinWidth, minHeight: altIconsButtonsMinHeight)
+                        .background(Color("ToolbarButtonsColor"))
                         .cornerRadius(15)
-                        .buttonStyle(.borderedProminent).tint(.red)
-                        
-                        Button(action: {
-                            Tip🐜().openInWindow(title: "", sender: self)
-                        }) {
-                            Image(systemName: "face.smiling")
-                                .font(.title)
-                                .padding(5)
+                        .onTapGesture {
+                            Tip🪲().openInWindow(title: "", sender: self)
                         }
-                        .cornerRadius(15)
-                        .buttonStyle(.borderedProminent).tint(.red)
                         
-                        Button(action: {
-                            Tip🐳().openInWindow(title: "", sender: self)
-                        }) {
+                        VStack {
                             Image(systemName: "bolt")
                                 .font(.title)
                                 .padding(5)
+                                .foregroundColor(.white)
                         }
+                        .frame(minWidth: altIconsButtonsMinWidth, minHeight: altIconsButtonsMinHeight)
+                        .background(Color("ToolbarButtonsColor"))
                         .cornerRadius(15)
-                        .buttonStyle(.borderedProminent).tint(.red)
+                        .onTapGesture {
+                            Tip🐜().openInWindow(title: "", sender: self)
+                        }
                         
-                        Button(action: {
-                            Tip🦊().openInWindow(title: "", sender: self)
-                        }) {
+                        VStack {
+                            Image(systemName: "memorychip")
+                                .font(.title)
+                                .padding(5)
+                                .foregroundColor(.white)
+                        }
+                        .frame(minWidth: altIconsButtonsMinWidth, minHeight: altIconsButtonsMinHeight)
+                        .background(Color("ToolbarButtonsColor"))
+                        .cornerRadius(15)
+                        .onTapGesture {
+                            Tip🐳().openInWindow(title: "", sender: self)
+                        }
+                        
+                        VStack {
                             Image(systemName: "menubar.dock.rectangle")
                                 .font(.title)
                                 .padding(5)
+                                .foregroundColor(.white)
                         }
+                        .frame(minWidth: altIconsButtonsMinWidth, minHeight: altIconsButtonsMinHeight)
+                        .background(Color("ToolbarButtonsColor"))
                         .cornerRadius(15)
-                        .buttonStyle(.borderedProminent).tint(.red)
+                        .onTapGesture {
+                            Tip🦊().openInWindow(title: "", sender: self)
+                        }
                     }
                     .padding(15)
                 }
-                
-                Button(action: {}) {
-                    Image(systemName: "alt")
-                        .font(.system(size: 14, weight: .regular))
-                        .padding(5)
-                    Toggle(isOn: $altIcons, label: {})
-                        .toggleStyle(.switch)
-                        .controlSize(.mini)
-                }
-                .cornerRadius(50)
             }
             
             Spacer()
@@ -247,6 +260,10 @@ struct Menu: View {
             Spacer()
         }
         .frame(minWidth: 550, idealWidth: 550, minHeight: 400, idealHeight: 400)
+        
+        Rectangle()
+            .frame(height: 5)
+                            .foregroundColor(.accentColor)
     }
     
     func hideApp() {

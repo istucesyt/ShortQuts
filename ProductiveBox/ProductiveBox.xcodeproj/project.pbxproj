@@ -18,6 +18,8 @@
 		0B44EC892B53F79D0025C14D /* Settings & Infos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B44EC882B53F79D0025C14D /* Settings & Infos.swift */; };
 		0B44ECC62B53FE380025C14D /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B44ECC52B53FE380025C14D /* Toolbar.swift */; };
 		0B44ECC82B5420750025C14D /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B44ECC72B5420750025C14D /* About.swift */; };
+		0B5AF9A82B65056B00C5181C /* Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5AF9A72B65056B00C5181C /* Setup.swift */; };
+		0B89BFE92B66C077004080B9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B89BFEB2B66C077004080B9 /* Localizable.strings */; };
 		0B9AB2292B616AC500EEDBD1 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 0B9AB2282B616AC500EEDBD1 /* LaunchAtLogin */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,9 @@
 		0B44ECA82B53F82F0025C14D /* ProductiveBox.ToolbarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProductiveBox.ToolbarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B44ECC52B53FE380025C14D /* Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
 		0B44ECC72B5420750025C14D /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
+		0B5AF9A72B65056B00C5181C /* Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setup.swift; sourceTree = "<group>"; };
+		0B89BFEA2B66C077004080B9 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0B89BFED2B66C0B5004080B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,12 +151,14 @@
 			isa = PBXGroup;
 			children = (
 				0B44EC5B2B53F7470025C14D /* ProductiveBoxApp.swift */,
+				0B5AF9A72B65056B00C5181C /* Setup.swift */,
 				0B44ECC52B53FE380025C14D /* Toolbar.swift */,
 				0B44EC5D2B53F7470025C14D /* Menu.swift */,
 				0B44EC862B53F7590025C14D /* Tips.swift */,
 				0B44EC882B53F79D0025C14D /* Settings & Infos.swift */,
 				0B44ECC72B5420750025C14D /* About.swift */,
 				0B44EC5F2B53F7480025C14D /* Assets.xcassets */,
+				0B89BFEC2B66C08C004080B9 /* Ressources */,
 				0B44EC612B53F7480025C14D /* Preview Content */,
 			);
 			path = ProductiveBox;
@@ -180,6 +187,14 @@
 				0B44EC792B53F7480025C14D /* ProductiveBoxUITestsLaunchTests.swift */,
 			);
 			path = ProductiveBoxUITests;
+			sourceTree = "<group>";
+		};
+		0B89BFEC2B66C08C004080B9 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				0B89BFEB2B66C077004080B9 /* Localizable.strings */,
+			);
+			path = Ressources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,11 +345,11 @@
 			};
 			buildConfigurationList = 0B44EC532B53F7470025C14D /* Build configuration list for PBXProject "ProductiveBox" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = fr;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				fr,
 				en,
-				Base,
 			);
 			mainGroup = 0B44EC4F2B53F7470025C14D;
 			packageReferences = (
@@ -360,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B44EC632B53F7480025C14D /* Preview Assets.xcassets in Resources */,
+				0B89BFE92B66C077004080B9 /* Localizable.strings in Resources */,
 				0B44EC602B53F7480025C14D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +427,7 @@
 				0B44EC5C2B53F7470025C14D /* ProductiveBoxApp.swift in Sources */,
 				0B44ECC62B53FE380025C14D /* Toolbar.swift in Sources */,
 				0B44EC872B53F7590025C14D /* Tips.swift in Sources */,
+				0B5AF9A82B65056B00C5181C /* Setup.swift in Sources */,
 				0B44EC892B53F79D0025C14D /* Settings & Infos.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,12 +495,25 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		0B89BFEB2B66C077004080B9 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B89BFEA2B66C077004080B9 /* fr */,
+				0B89BFED2B66C0B5004080B9 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		0B44EC7B2B53F7480025C14D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -547,6 +577,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -613,7 +644,7 @@
 				INFOPLIST_FILE = ProductiveBox/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_LSUIElement = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "Autorisez-vous l'automatisation AppleScript pour ProductiveBox ?";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -643,7 +674,7 @@
 				INFOPLIST_FILE = ProductiveBox/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_LSUIElement = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "Autorisez-vous l'automatisation AppleScript pour ProductiveBox ?";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

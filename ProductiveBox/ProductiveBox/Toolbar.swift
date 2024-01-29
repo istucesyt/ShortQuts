@@ -9,7 +9,9 @@ import SwiftUI
 
 struct Toolbar: View {
     @AppStorage("altIcons") var altIcons: Bool = false
-    @AppStorage("rotation") var rotation: Bool = false
+    @State private var hover: Bool = false
+    @State private var altIconsButtonsMinWidth: CGFloat = 56
+    @State private var altIconsButtonsMinHeight: CGFloat = 42
     
     var body: some View {
         VStack {
@@ -17,34 +19,37 @@ struct Toolbar: View {
                 Spacer(minLength: 20)
                 
                 VStack {
-                    Button(action: {}) {
-                        Text("ProductiveBox")
-                            .font(.caption)
+                    Spacer(minLength: 10)
+                    
+                    VStack {
+                        Image(systemName: "ellipsis")
+                            .font(.system(size: 10, weight: .regular))
+                        Image(systemName: "ellipsis")
+                            .font(.system(size: 10, weight: .regular))
+                        Image(systemName: "ellipsis")
+                            .font(.system(size: 10, weight: .regular))
+                    }
+                    .onHover { isHovered in
+                                        self.hover = isHovered
+                                        DispatchQueue.main.async {
+                                            if (self.hover) {
+                                                NSCursor.openHand.push()
+                                            } else {
+                                                NSCursor.pop()
+                                            }
+                                        }
+                                    }
+                    
+                    Spacer(minLength: 15)
+                    
+                    Button(action: {
+                        About().openInWindow(title: "", sender: self)
+                    }) {
+                        Image(systemName: "info.square")
+                            .font(.system(size: 14, weight: .regular))
+                            .padding(5)
                     }
                     .cornerRadius(50)
-                    .disabled(true)
-                    
-                    if rotation {
-                        Button(action: {}) {
-                            Image(systemName: "rectangle.landscape.rotate")
-                                .font(.system(size: 14, weight: .regular))
-                                .padding(5)
-                            Toggle(isOn: $rotation, label: {})
-                                .toggleStyle(.switch)
-                                .controlSize(.mini)
-                        }
-                        .cornerRadius(50)
-                    } else {
-                        Button(action: {}) {
-                            Image(systemName: "rectangle.portrait.rotate")
-                                .font(.system(size: 14, weight: .regular))
-                                .padding(5)
-                            Toggle(isOn: $rotation, label: {})
-                                .toggleStyle(.switch)
-                                .controlSize(.mini)
-                        }
-                        .cornerRadius(50)
-                    }
                 }
                 
                 VStack {
@@ -71,7 +76,7 @@ struct Toolbar: View {
                 if altIcons == false {
                     HStack  {
                         Button(action: {
-                            
+                            testShortcuts()
                         }) {
                             Text("🐞")
                                 .font(.largeTitle)
@@ -135,76 +140,97 @@ struct Toolbar: View {
                     }
                     .padding(15)
                 } else {
-                    HStack  {
-                        Button(action: {
-                            
-                        }) {
+                    HStack {
+                        VStack {
                             Image(systemName: "note.text.badge.plus")
                                 .font(.title)
                                 .padding(5)
+                                .foregroundColor(.white)
                         }
+                        .frame(minWidth: altIconsButtonsMinWidth, minHeight: altIconsButtonsMinHeight)
+                        .background(Color("ToolbarButtonsColor"))
                         .cornerRadius(15)
-                        .buttonStyle(.borderedProminent).tint(.red)
-                    
-                        Button(action: {
+                        .onTapGesture {
                             
-                        }) {
+                        }
+                        
+                        VStack {
                             Image(systemName: "rectangle.split.2x1")
                                 .font(.title)
                                 .padding(5)
+                                .foregroundColor(.white)
                         }
+                        .frame(minWidth: altIconsButtonsMinWidth, minHeight: altIconsButtonsMinHeight)
+                        .background(Color("ToolbarButtonsColor"))
                         .cornerRadius(15)
-                        .buttonStyle(.borderedProminent).tint(.red)
-                        
-                        Button(action: {
+                        .onTapGesture {
                             
-                        }) {
+                        }
+                    
+                        VStack {
                             Image(systemName: "camera.badge.ellipsis")
                                 .font(.title)
                                 .padding(5)
+                                .foregroundColor(.white)
                         }
+                        .frame(minWidth: altIconsButtonsMinWidth, minHeight: altIconsButtonsMinHeight)
+                        .background(Color("ToolbarButtonsColor"))
                         .cornerRadius(15)
-                        .buttonStyle(.borderedProminent).tint(.red)
-                        
-                        Button(action: {
+                        .onTapGesture {
                             
-                        }) {
+                        }
+                        
+                        VStack {
                             Image(systemName: "togglepower")
                                 .font(.title)
                                 .padding(5)
+                                .foregroundColor(.white)
                         }
+                        .frame(minWidth: altIconsButtonsMinWidth, minHeight: altIconsButtonsMinHeight)
+                        .background(Color("ToolbarButtonsColor"))
                         .cornerRadius(15)
-                        .buttonStyle(.borderedProminent).tint(.red)
-                        
-                        Button(action: {
+                        .onTapGesture {
                             
-                        }) {
-                            Image(systemName: "face.smiling")
-                                .font(.title)
-                                .padding(5)
                         }
-                        .cornerRadius(15)
-                        .buttonStyle(.borderedProminent).tint(.red)
                         
-                        Button(action: {
-                            
-                        }) {
+                        VStack {
                             Image(systemName: "bolt")
                                 .font(.title)
                                 .padding(5)
+                                .foregroundColor(.white)
                         }
+                        .frame(minWidth: altIconsButtonsMinWidth, minHeight: altIconsButtonsMinHeight)
+                        .background(Color("ToolbarButtonsColor"))
                         .cornerRadius(15)
-                        .buttonStyle(.borderedProminent).tint(.red)
-                        
-                        Button(action: {
+                        .onTapGesture {
                             
-                        }) {
+                        }
+                        
+                        VStack {
+                            Image(systemName: "memorychip")
+                                .font(.title)
+                                .padding(5)
+                                .foregroundColor(.white)
+                        }
+                        .frame(minWidth: altIconsButtonsMinWidth, minHeight: altIconsButtonsMinHeight)
+                        .background(Color("ToolbarButtonsColor"))
+                        .cornerRadius(15)
+                        .onTapGesture {
+                            
+                        }
+                        
+                        VStack {
                             Image(systemName: "menubar.dock.rectangle")
                                 .font(.title)
                                 .padding(5)
+                                .foregroundColor(.white)
                         }
+                        .frame(minWidth: altIconsButtonsMinWidth, minHeight: altIconsButtonsMinHeight)
+                        .background(Color("ToolbarButtonsColor"))
                         .cornerRadius(15)
-                        .buttonStyle(.borderedProminent).tint(.red)
+                        .onTapGesture {
+                            
+                        }
                     }
                     .padding(15)
                 }
@@ -214,11 +240,27 @@ struct Toolbar: View {
             
             Spacer(minLength: 28)
         }
-        .frame(minWidth: 635, maxWidth: 635, maxHeight: 50, alignment: .leading)
+        .frame(minWidth: 600, maxWidth: 600, maxHeight: 50, alignment: .leading)
     }
     
     func terminateApp() {
         NSApplication.shared.terminate(nil)
+    }
+        
+    func testShortcuts() -> Void {
+        let source = """
+            tell application "Shortcuts"
+                run shortcut ""
+            end tell
+        """
+        
+        if let script = NSAppleScript(source: source) {
+            var error: NSDictionary?
+            script.executeAndReturnError(&error)
+            if let err = error {
+                print(err)
+            }
+        }
     }
 }
 
