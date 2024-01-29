@@ -54,3 +54,8 @@ https://istuces.framer.website/productivebox
 * menu updated with the same changes
 * updated symbol pages with the same changes
 * added “launch at login” functionality (resource: https://github.com/sindresorhus/LaunchAtLogin-Modern)
+
+### 29/01/24:
+* added Setup Assistant
+* correction of the shape/size of action buttons (SF symbols)
+* added some interface components
