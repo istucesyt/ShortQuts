@@ -1,11 +1,11 @@
-# ProductiveBox-Development
+# ShortQuts [Development]
 
-<a href="https://zupimages.net/viewer.php?id=24/02/bx11.png"><img src="https://zupimages.net/up/24/02/bx11.png" alt="" width=150/>
+<a href="https://zupimages.net/viewer.php?id=24/07/2mld.png"><img src="https://zupimages.net/up/24/07/2mld.png" alt="" width=150/>
 
 Development repository. 
-https://istuces.framer.website/productivebox
+https://istuces.framer.website/shortquts
 
-## 🧭 Changelog
+## 🧭 Changelog (scroll down)
 
 ### 26/11/23 :
 * completed "About" menu
@@ -59,3 +59,5 @@ https://istuces.framer.website/productivebox
 * added Setup Assistant
 * correction of the shape/size of action buttons (SF symbols)
 * added some interface components
+
+## ProductiveBox becomes ShortQuts
