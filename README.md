@@ -7,11 +7,11 @@
 Development repository. 
 https://istuces.framer.website/shortquts
 
-## 🧭 Changelog /scroll down/
+## 🧭 Changelog
 
 Updating...
 
-## 🧭 Changelog (ProductiveBox, now ShortQuts) /scroll down/
+## 🧭 Changelog (ProductiveBox, now ShortQuts) -> scroll down
 
 ### 26/11/23 :
 * completed "About" menu
