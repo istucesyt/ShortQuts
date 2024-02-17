@@ -7,7 +7,11 @@
 Development repository. 
 https://istuces.framer.website/shortquts
 
-## 🧭 Changelog (scroll down)
+## 🧭 Changelog /scroll down/
+
+Updating...
+
+## 🧭 Changelog (ProductiveBox, now ShortQuts) /scroll down/
 
 ### 26/11/23 :
 * completed "About" menu
@@ -62,4 +66,4 @@ https://istuces.framer.website/shortquts
 * correction of the shape/size of action buttons (SF symbols)
 * added some interface components
 
-## ProductiveBox becomes ShortQuts
+### ProductiveBox becomes ShortQuts
